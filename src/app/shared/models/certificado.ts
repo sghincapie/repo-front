@@ -1,0 +1,31 @@
+export interface Certificado {
+  puedeImprimir: string;
+  maxDiasRequeridos: number;
+  solicitudId: number;
+  solicitudTransito: number;
+  tramiteNumero: number;
+  tramiteTipo: number;
+  certificadoNumero: string;
+  certificadoExpedicion: string;
+  certificadoTipo: string;
+  certificadoCategoria: string;
+  escuelaId: number;
+  escuelaNombre: string;
+  escuelaNroDocumento: string;
+  escuelaTipoDocumento: string;
+  escuelaCiudad: string;
+  usuarioId: number;
+  usuarioNombres: string;
+  usuarioApellidos: string;
+  usuarioNroDocumento: string;
+  usuarioTipoDocumento: string;
+  usuarioCiudad: string;
+  cursoAlumnoId: number;
+  cursoInscripcion: string;
+  totalHorasTeoricas: number;
+  totalHorasPracticas: number;
+  logoMTUrl: string;
+  logoMT: string;
+  logoRUNTUrl: string;
+  logoRUNT: string;
+}

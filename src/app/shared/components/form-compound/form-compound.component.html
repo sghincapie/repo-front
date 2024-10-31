@@ -1,0 +1,23 @@
+<div role="form">
+  <div class="row mt-2" *ngIf="titlePage !== ''">
+    <h1 class="mat-headline color-accent mb-5 mt-2">{{ titlePage}}</h1>
+  </div>
+  <div [ngClass]="{ 'mt-5': titlePage === '' }">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content> <ng-content></ng-content></mat-card-content>
+      <mat-card-actions>
+        <div class="container-btn-events">
+          <button *ngIf="consultar" mat-raised-button color="accent" (click)="consultar()">
+            {{ 'consultasMf.botones.enviar'}}
+          </button>
+          <button *ngIf="cancelar" mat-raised-button (click)="cancelar()">
+            {{ 'consultasMf.botones.cancelar'}}
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

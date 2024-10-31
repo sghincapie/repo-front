@@ -1,0 +1,9 @@
+<div [formGroup]="form" class="px-4">
+  <mat-form-field *ngIf="type === 'EMPRESA'" class="col-12">
+    <mat-label>{{ name }}</mat-label>
+    <input type="text" placeholder="{{ placeholder }}" formControlName="{{ controlName }}" matInput
+      [matTooltip]="tooltip" [matAutocomplete]="auto" />
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="changeEvent()">
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

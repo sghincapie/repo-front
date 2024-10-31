@@ -1,0 +1,14 @@
+<div [formGroup]="form" class="px-4">
+  <mat-form-field class="col-12">
+    <mat-label>{{ name}}</mat-label>
+    <input *ngIf="type === 'TEXT'" matInput id="{{ id }}" type="text" formControlName="{{ controlName }}"
+      [maxlength]="maxLength ? maxLength : null" [minlength]="minLength ? minLength : null" [matTooltip]="tooltip" />
+    <input *ngIf="type === 'NUMBER'" matInput id="{{ id }}" type="text" formControlName="{{ controlName }}"
+      [maxlength]="maxLength ? maxLength : null" [minlength]="minLength ? minLength : null" [matTooltip]="tooltip"
+      rnetConsultasOnlyNumber />
+
+    <input *ngIf="type === 'ALFA_NUMERIC'" matInput id="{{ id }}" type="text" formControlName="{{ controlName }}"
+      [maxlength]="maxLength ? maxLength : null" [minlength]="minLength ? minLength : null" [matTooltip]="tooltip"
+      rnetConsultasOnlyAlfanumeric />
+  </mat-form-field>
+</div>

@@ -1,0 +1,35 @@
+<app-form-compound [titlePage]="'Prueba Servicios Departamentos'">
+    <form [formGroup]="form">
+        <app-mat-card [subtitle]="'Departamento'">
+            <br>
+            <br>
+            <div id="contenedor">
+                <div>
+                    <app-select [id]="'departamento'" [name]="'Departamentos'" [tooltip]="'Departamentos'" [form]="form"
+                        [controlName]="'departamento'" [type]="'DEPARTAMENTO'" [items]="departamentos"
+                        [labelError]="'Departamentos'">
+                    </app-select>
+                </div>
+                <div>
+                    <app-input [id]="'idDepartamento'" [name]="'Departamento'" [form]="form"
+                        [controlName]="'idDepartamento'" [type]="'ALFA_NUMERIC'" [labelError]="'Departamento'"
+                        [maxLength]="'20'" [tooltip]="'Departamento'">
+                    </app-input>
+                    <br>
+                    <br>
+                    <button mat-raised-button color="accent" (click)="buscarDepartamento()">
+                        {{ 'Buscar Departamento'}}
+                    </button>
+                </div>
+            </div>
+            <div id="contenedor">
+                <div *ngIf="form.get('departamento')?.value != null">
+                    <p>Departamento list</p>{{departamentos[form.get('departamento')?.value].id}} -- {{departamentos[form.get('departamento')?.value].nombre}}
+                </div>
+                <div *ngIf="departamento">
+                    <p>Departamento busqueda</p>{{departamento.nombre}}
+                </div>
+            </div>
+        </app-mat-card>
+    </form>
+</app-form-compound>

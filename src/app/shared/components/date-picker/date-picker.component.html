@@ -1,0 +1,27 @@
+<div [formGroup]="form" *ngIf="type === ''" class="px-4">
+  <mat-form-field class="col-12">
+    <mat-label>{{ name}}</mat-label>
+    <input [matDatepicker]="datePicker" formControlName="{{ controlName }}" matInput [min]="minDate" [max]="maxDate"
+      [matTooltip]="tooltip" readonly />
+    <mat-datepicker-toggle matSuffix [for]="$any(datePicker)"></mat-datepicker-toggle>
+    <mat-datepicker #datePicker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+<div [formGroup]="form" *ngIf="type === 'SIN_HORA'" class="px-4">
+  <mat-form-field class="col-12">
+    <mat-label>{{ name}}</mat-label>
+    <input matInput placeholder="{{ placeholder }}" formControlName="{{ controlName }}" [min]="minDate" [max]="maxDate"
+      [matTooltip]="tooltip" readonly />
+    <mat-datepicker-toggle matSuffix></mat-datepicker-toggle>
+  </mat-form-field>
+</div>
+
+<div [formGroup]="form" *ngIf="type === 'CON_HORA'" class="px-4">
+  <mat-form-field class="col-12">
+    <mat-label>{{ name}}</mat-label>
+    <input matInput placeholder="{{ placeholder }}" formControlName="{{ controlName }}" [min]="minDate" [max]="maxDate"
+      [matTooltip]="tooltip" readonly />
+    <mat-datepicker-toggle matSuffix></mat-datepicker-toggle>
+  </mat-form-field>
+</div>
