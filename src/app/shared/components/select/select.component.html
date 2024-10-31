@@ -1,0 +1,15 @@
+<div [formGroup]="form">
+  <mat-form-field class="col-12">
+    <mat-label>{{ name}}</mat-label>
+    <mat-select
+      formControlName="{{ controlName }}"
+      (selectionChange)="changeEvent()"
+      [matTooltip]="tooltip">
+      <ng-container *ngIf="type === 'DEPARTAMENTO'">
+        <mat-option *ngFor="let item of items; let i = index" [value]="i">
+          {{ validateItem(item, 'nombre') }}
+        </mat-option>
+      </ng-container>
+    </mat-select>
+  </mat-form-field>
+</div>
